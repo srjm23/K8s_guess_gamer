@@ -17,14 +17,10 @@ spec:
           image: srjm2024/frontend-jm:2.0
           ports:
             - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend
-spec:
-  ports:
-    - port: 80
-      targetPort: 80
-  selector:
-    app: frontend
+          resources:
+            requests:
+              memory: "128Mi"  
+              cpu: "250m"      
+            limits:
+              memory: "256Mi"   
+              cpu: "500m"    
